@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>แปลงสกุลเงินและเวลา</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>ระบบแปลงสกุลเงินและเวลา</h1>
+
+      <!-- ระบบแปลงสกุลเงิน -->
+      <section>
+        <h2>แปลงสกุลเงิน</h2>
+        <div>
+          <label for="from-currency">จากสกุลเงิน:</label>
+          <!-- ในส่วนของ dropdown สกุลเงินต้นทางและปลายทาง -->
+          <select id="from-currency">
+            <option value="USD">USD - ดอลลาร์สหรัฐ</option>
+            <option value="THB">THB - บาทไทย</option>
+            <option value="EUR">EUR - ยูโร</option>
+            <option value="JPY">JPY - เยนญี่ปุ่น</option>
+            <option value="GBP">GBP - ปอนด์สเตอร์ลิง (สหราชอาณาจักร)</option>
+            <option value="AUD">AUD - ดอลลาร์ออสเตรเลีย</option>
+            <option value="CAD">CAD - ดอลลาร์แคนาดา</option>
+            <option value="CHF">CHF - ฟรังก์สวิส</option>
+            <option value="CNY">CNY - หยวนจีน</option>
+            <option value="INR">INR - รูปีอินเดีย</option>
+            <option value="SGD">SGD - ดอลลาร์สิงคโปร์</option>
+            <option value="KRW">KRW - วอนเกาหลีใต้</option>
+          </select>
+        </div>
+        <div>
+          <label for="to-currency">เป็นสกุลเงิน:</label>
+          <select id="to-currency">
+            <option value="USD">USD - ดอลลาร์สหรัฐ</option>
+            <option value="THB">THB - บาทไทย</option>
+            <option value="EUR">EUR - ยูโร</option>
+            <option value="JPY">JPY - เยนญี่ปุ่น</option>
+            <option value="GBP">GBP - ปอนด์สเตอร์ลิง (สหราชอาณาจักร)</option>
+            <option value="AUD">AUD - ดอลลาร์ออสเตรเลีย</option>
+            <option value="CAD">CAD - ดอลลาร์แคนาดา</option>
+            <option value="CHF">CHF - ฟรังก์สวิส</option>
+            <option value="CNY">CNY - หยวนจีน</option>
+            <option value="INR">INR - รูปีอินเดีย</option>
+            <option value="SGD">SGD - ดอลลาร์สิงคโปร์</option>
+            <option value="KRW">KRW - วอนเกาหลีใต้</option>
+          </select>
+        </div>
+        <div>
+          <label for="amount">จำนวนเงิน:</label>
+          <input type="number" id="amount" value="1" />
+        </div>
+        <button id="convert-currency">แปลงสกุลเงิน</button>
+        <p>ผลลัพธ์: <span id="currency-result"></span></p>
+        <p>อัตราแลกเปลี่ยนปัจจุบัน: <span id="exchange-rate"></span></p>
+      </section>
+
+      <!-- ระบบแปลงเวลา -->
+      <section>
+        <h2>แปลงเวลา</h2>
+        <div>
+          <label for="from-timezone">จากโซนเวลา:</label>
+          <!-- ในส่วนของ dropdown โซนเวลา -->
+          <select id="from-timezone">
+            <option value="UTC">UTC</option>
+            <option value="Asia/Bangkok">Asia/Bangkok (ไทย)</option>
+            <option value="America/New_York">America/New_York (สหรัฐฯ)</option>
+            <option value="Europe/London">Europe/London (สหราชอาณาจักร)</option>
+            <option value="Australia/Sydney">
+              Australia/Sydney (ออสเตรเลีย)
+            </option>
+            <option value="Canada/Toronto">Canada/Toronto (แคนาดา)</option>
+            <option value="Europe/Zurich">
+              Europe/Zurich (สวิตเซอร์แลนด์)
+            </option>
+            <option value="Asia/Shanghai">Asia/Shanghai (จีน)</option>
+            <option value="Asia/Kolkata">Asia/Kolkata (อินเดีย)</option>
+            <option value="Asia/Singapore">Asia/Singapore (สิงคโปร์)</option>
+            <option value="Asia/Seoul">Asia/Seoul (เกาหลีใต้)</option>
+          </select>
+        </div>
+        <div>
+          <label for="to-timezone">เป็นโซนเวลา:</label>
+          <!-- ในส่วนของ dropdown โซนเวลา -->
+          <select id="to-timezone">
+            <option value="UTC">UTC</option>
+            <option value="Asia/Bangkok">Asia/Bangkok (ไทย)</option>
+            <option value="America/New_York">America/New_York (สหรัฐฯ)</option>
+            <option value="Europe/London">Europe/London (สหราชอาณาจักร)</option>
+            <option value="Australia/Sydney">
+              Australia/Sydney (ออสเตรเลีย)
+            </option>
+            <option value="Canada/Toronto">Canada/Toronto (แคนาดา)</option>
+            <option value="Europe/Zurich">
+              Europe/Zurich (สวิตเซอร์แลนด์)
+            </option>
+            <option value="Asia/Shanghai">Asia/Shanghai (จีน)</option>
+            <option value="Asia/Kolkata">Asia/Kolkata (อินเดีย)</option>
+            <option value="Asia/Singapore">Asia/Singapore (สิงคโปร์)</option>
+            <option value="Asia/Seoul">Asia/Seoul (เกาหลีใต้)</option>
+          </select>
+        </div>
+        <button id="convert-time">แปลงเวลา</button>
+        <p>ผลลัพธ์: <span id="time-result"></span></p>
+      </section>
+
+      <!-- ระบบเปรียบเทียบเวลา -->
+      <section>
+        <h2>เปรียบเทียบเวลา</h2>
+        <div>
+          <label for="timezone1">โซนเวลา 1:</label>
+          <!-- ในส่วนของ dropdown โซนเวลา -->
+          <select id="timezone1">
+            <option value="UTC">UTC</option>
+            <option value="Asia/Bangkok">Asia/Bangkok (ไทย)</option>
+            <option value="America/New_York">America/New_York (สหรัฐฯ)</option>
+            <option value="Europe/London">Europe/London (สหราชอาณาจักร)</option>
+            <option value="Australia/Sydney">
+              Australia/Sydney (ออสเตรเลีย)
+            </option>
+            <option value="Canada/Toronto">Canada/Toronto (แคนาดา)</option>
+            <option value="Europe/Zurich">
+              Europe/Zurich (สวิตเซอร์แลนด์)
+            </option>
+            <option value="Asia/Shanghai">Asia/Shanghai (จีน)</option>
+            <option value="Asia/Kolkata">Asia/Kolkata (อินเดีย)</option>
+            <option value="Asia/Singapore">Asia/Singapore (สิงคโปร์)</option>
+            <option value="Asia/Seoul">Asia/Seoul (เกาหลีใต้)</option>
+          </select>
+        </div>
+        <div>
+          <label for="timezone2">โซนเวลา 2:</label>
+          <!-- ในส่วนของ dropdown โซนเวลา -->
+          <select id="timezone2">
+            <option value="UTC">UTC</option>
+            <option value="Asia/Bangkok">Asia/Bangkok (ไทย)</option>
+            <option value="America/New_York">America/New_York (สหรัฐฯ)</option>
+            <option value="Europe/London">Europe/London (สหราชอาณาจักร)</option>
+            <option value="Australia/Sydney">
+              Australia/Sydney (ออสเตรเลีย)
+            </option>
+            <option value="Canada/Toronto">Canada/Toronto (แคนาดา)</option>
+            <option value="Europe/Zurich">
+              Europe/Zurich (สวิตเซอร์แลนด์)
+            </option>
+            <option value="Asia/Shanghai">Asia/Shanghai (จีน)</option>
+            <option value="Asia/Kolkata">Asia/Kolkata (อินเดีย)</option>
+            <option value="Asia/Singapore">Asia/Singapore (สิงคโปร์)</option>
+            <option value="Asia/Seoul">Asia/Seoul (เกาหลีใต้)</option>
+          </select>
+        </div>
+        <button id="compare-time">เปรียบเทียบเวลา</button>
+        <p>เวลาปัจจุบันในโซนเวลา 1: <span id="time1-result"></span></p>
+        <p>เวลาปัจจุบันในโซนเวลา 2: <span id="time2-result"></span></p>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
